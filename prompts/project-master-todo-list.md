@@ -3,15 +3,15 @@
 
 ## Phase 0 — Project Setup
 
-- [ ] Create the Next.js app (with TypeScript, Tailwind CSS, App Router)
-- [ ] Set up base folders:
-  - [ ] `app/`
-  - [ ] `components/`
-  - [ ] `lib/`
-  - [ ] `data/`
-  - [ ] `types/`
-  - [ ] `hooks/`
-  - [ ] `constants/`
+- [x] Create the Next.js app (with TypeScript, Tailwind CSS, App Router)
+- [x] Set up base folders:
+  - [x] `app/`
+  - [x] `components/`
+  - [x] `lib/`
+  - [x] `data/`
+  - [x] `types/`
+  - [x] `hooks/`
+  - [x] `constants/`
 - [ ] Set up linting, formatting, and naming conventions
 - [ ] Add base layout, container widths, spacing scale, color tokens
 - [ ] Create a deploy target on Vercel
