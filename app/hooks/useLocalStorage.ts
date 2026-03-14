@@ -10,10 +10,7 @@
  */
 
 import { useCallback, useState } from "react";
-import {
-  getLocalStorageItem,
-  setLocalStorageItem,
-} from "@/lib/storage";
+import { getLocalStorageItem, setLocalStorageItem } from "@/lib/storage";
 
 export function useLocalStorageState<T>(
   key: string,
@@ -27,7 +24,8 @@ export function useLocalStorageState<T>(
   const setValue = useCallback(
     (value: T | ((prev: T) => T)) => {
       setState((prev) => {
-        const next = typeof value === "function" ? (value as (prev: T) => T)(prev) : value;
+        const next =
+          typeof value === "function" ? (value as (prev: T) => T)(prev) : value;
         setLocalStorageItem(key, next);
         return next;
       });

@@ -1,4 +1,3 @@
-
 # 📝 Master TODO List: Zero to Deployed MVP
 
 ## Phase 0 — Project Setup
@@ -12,7 +11,7 @@
   - [x] `types/`
   - [x] `hooks/`
   - [x] `constants/`
-- [ ] Set up linting, formatting, and naming conventions
+- [x] Set up linting, formatting, and naming conventions
 - [ ] Add base layout, container widths, spacing scale, color tokens
 - [ ] Create a deploy target on Vercel
 
@@ -113,5 +112,3 @@
 - [ ] Add metadata / SEO basics
 - [ ] Deploy to Vercel
 - [ ] Run final smoke test in production
-
-

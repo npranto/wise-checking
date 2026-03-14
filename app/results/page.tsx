@@ -19,8 +19,7 @@ export default function ResultsPage() {
         />
         <p className="mt-6 text-zinc-600 dark:text-zinc-400">
           Results UI will show recommendation cards (label, account, reasons,
-          estimatedYearlyCost), comparison section, and apply links using
-          @/data.
+          estimatedYearlyCost), comparison section, and apply links using @/data.
         </p>
         <p className="mt-4">
           <a

@@ -19,8 +19,8 @@ export default function QuizPage() {
           description="Answer a few questions to get personalized recommendations."
         />
         <p className="mt-6 text-zinc-600 dark:text-zinc-400">
-          Quiz UI will go here: one question at a time, next/back/skip, using
-          lib/quiz and @/data.
+          Quiz UI will go here: one question at a time, next/back/skip, using lib/quiz
+          and @/data.
         </p>
         <p className="mt-4">
           <a
