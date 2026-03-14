@@ -3,7 +3,7 @@
  * behavior (e.g. pass href to render as next/link or <a>). Use for primary
  * and secondary CTAs; primary/secondary styles can live here or in callers
  * via className. For internal app routes, prefer next/link with this
- * component’s styles or use asChild pattern when needed.
+ * component's styles or use asChild pattern when needed.
  */
 
 import Link from "next/link";

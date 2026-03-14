@@ -14,9 +14,5 @@ interface LayoutShellProps {
 }
 
 export function LayoutShell({ children, className = "" }: LayoutShellProps) {
-  return (
-    <div className={`${UI_CONTAINER_CLASS} ${className}`.trim()}>
-      {children}
-    </div>
-  );
+  return <div className={`${UI_CONTAINER_CLASS} ${className}`.trim()}>{children}</div>;
 }

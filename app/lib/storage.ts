@@ -5,7 +5,8 @@
  * Intentionally minimal for MVP; extend for TTL or namespacing if needed.
  */
 
-const isClient = typeof window !== "undefined" && typeof window.localStorage !== "undefined";
+const isClient =
+  typeof window !== "undefined" && typeof window.localStorage !== "undefined";
 
 export function getLocalStorageItem<T>(key: string): T | null {
   if (!isClient) return null;
