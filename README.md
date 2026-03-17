@@ -41,15 +41,14 @@ npm run prepare
 
 ## Scripts
 
-| Command               | Description                           |
-| --------------------- | ------------------------------------- |
-| `npm run dev`         | Start dev server (App Router + HMR)   |
-| `npm run build`       | Production build                      |
-| `npm run start`       | Run production server after build     |
-| `npm run lint`        | ESLint (Next.js config)               |
-| `npm run format`      | Prettier format for \`app/\*_/_\`     |
-| `npm run lint-staged` | Run lint-staged on staged files       |
-| `npm run dead-code`   | Dead-code analysis via \`unimported\` |
+| Command               | Description                         |
+| --------------------- | ----------------------------------- |
+| `npm run dev`         | Start dev server (App Router + HMR) |
+| `npm run build`       | Production build                    |
+| `npm run start`       | Run production server after build   |
+| `npm run lint`        | ESLint (Next.js config)             |
+| `npm run format`      | Prettier format for \`app/\*_/_\`   |
+| `npm run lint-staged` | Run lint-staged on staged files     |
 
 ---
 
@@ -62,14 +61,6 @@ npm run prepare
   - `npm run lint` — full-project lint.
   - `npm run format` — format the entire `app` folder.
   - `npm run lint-staged` — run the lint-staged pipeline against currently staged files.
-
----
-
-## Dead-code analysis
-
-- **Local:** Run `npm run dead-code` to scan for unused files and dependencies using [`unimported`](https://github.com/smeijer/unimported).
-- **CI:** The GitHub Actions lint workflow runs `npm run dead-code` on pull requests to `master` and will fail if unused files/deps are detected.
-- **Configuration:** Dead-code rules and exclusions live in `unimported.config.mjs`. If you intentionally add files that are not imported (for example, future stubs or purely manual documentation helpers), update `ignorePatterns` in that config to silence them.
 
 **Local dev (default):** [http://localhost:3000](http://localhost:3000)
 

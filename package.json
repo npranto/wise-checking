@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "dead-code": "unimported",
     "format": "prettier \"app/**/*.{ts,tsx,js,jsx,json,css,md}\" --write",
     "prepare": "husky",
     "lint-staged": "lint-staged"
@@ -30,8 +29,7 @@
     "lint-staged": "^15.4.0",
     "prettier": "^3.8.1",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "unimported": "^2.10.1"
+    "typescript": "^5"
   },
   "lint-staged": {
     "app/**/*.{ts,tsx,js,jsx}": [
