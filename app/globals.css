@@ -1,26 +1,154 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------------------
+   Design system: Airbnb-style palette, data-theme for light/dark.
+   When data-theme is not set, :root (light) is used; set data-theme on <html>
+   for theme toggle (e.g. data-theme="light" | data-theme="dark").
+   --------------------------------------------------------------------------- */
+
+/* Light theme (default) */
+:root,
+[data-theme="light"] {
+  /* Primary & accents */
+  --color-primary: #ff5a5f;
+  --color-primary-hover: #e04a4f;
+  --color-secondary: #00a699;
+  --color-secondary-hover: #008b80;
+  --color-accent: #fc642d;
+
+  /* Backgrounds & surfaces */
+  --color-background: #ffffff;
+  --color-surface: #f7f7f7;
+  --color-border: #ebebeb;
+
+  /* Typography */
+  --color-text-primary: #222222;
+  --color-text-secondary: #717171;
+  --color-text-muted: #b0b0b0;
+
+  /* Semantic */
+  --color-success: #008a05;
+  --color-warning: #ffb400;
+  --color-error: #c13515;
+  --color-info: #428bff;
+
+  /* Interactive */
+  --color-link: #ff5a5f;
+  --color-link-hover: #e04a4f;
+  --color-focus-ring: #ff5a5f;
+  --color-muted: #b0b0b0;
+
+  /* Aliases for body */
+  --background: var(--color-background);
+  --foreground: var(--color-text-primary);
+
+  /* Radius (softer only) */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-dropdown: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+
+  /* Motion */
+  --duration-default: 150ms;
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dark theme */
+[data-theme="dark"] {
+  --color-primary: #ff7a7e;
+  --color-primary-hover: #ff9a9e;
+  --color-secondary: #00c4b4;
+  --color-secondary-hover: #00e5d4;
+  --color-accent: #fd8a5c;
+
+  --color-background: #0a0a0a;
+  --color-surface: #171717;
+  --color-border: #2a2a2a;
+
+  --color-text-primary: #ededed;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #737373;
+
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  --color-link: #ff7a7e;
+  --color-link-hover: #ff9a9e;
+  --color-focus-ring: #ff7a7e;
+  --color-muted: #737373;
+
+  --background: var(--color-background);
+  --foreground: var(--color-text-primary);
+
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+  --shadow-dropdown: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
+
+/* Expose tokens to Tailwind v4 @theme */
 @theme inline {
-  --color-background: var(--background);
+  /* Colors */
+  --color-background: var(--color-background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-hover: var(--color-secondary-hover);
+  --color-accent: var(--color-accent);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-info: var(--color-info);
+  --color-link: var(--color-link);
+  --color-link-hover: var(--color-link-hover);
+  --color-focus-ring: var(--color-focus-ring);
+  /* Alias for muted text (use text-muted in Tailwind) */
+  --color-muted: var(--color-text-muted);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  /* Shadows (Tailwind 4 may need specific key names) */
+  --shadow-card: var(--shadow-card);
+  --shadow-dropdown: var(--shadow-dropdown);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Focus ring utility */
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }

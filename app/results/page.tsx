@@ -6,6 +6,7 @@
 
 import { LayoutShell } from "@/components/LayoutShell";
 import { PageHeader } from "@/components/PageHeader";
+import { TextLink } from "@/components/TextLink";
 import { COPY } from "@/constants/copy";
 import { ROUTES } from "@/constants/routes";
 
@@ -17,24 +18,18 @@ export default function ResultsPage() {
           title={COPY.RESULTS_TITLE}
           description="Compare and apply; retake the quiz anytime."
         />
-        <p className="mt-6 text-zinc-600 dark:text-zinc-400">
+        <p className="mt-6 text-muted">
           Results UI will show recommendation cards (label, account, reasons,
           estimatedYearlyCost), comparison section, and apply links using @/data.
         </p>
         <p className="mt-4">
-          <a
-            href={ROUTES.QUIZ}
-            className="text-foreground underline hover:no-underline"
-          >
+          <TextLink href={ROUTES.QUIZ} underline>
             {COPY.QUIZ_CTA}
-          </a>
+          </TextLink>
           {" · "}
-          <a
-            href={ROUTES.HOME}
-            className="text-foreground underline hover:no-underline"
-          >
+          <TextLink href={ROUTES.HOME} underline>
             {COPY.APP_NAME} home
-          </a>
+          </TextLink>
         </p>
       </LayoutShell>
     </div>

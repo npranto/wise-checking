@@ -7,6 +7,7 @@
 
 import { LayoutShell } from "@/components/LayoutShell";
 import { PageHeader } from "@/components/PageHeader";
+import { TextLink } from "@/components/TextLink";
 import { COPY } from "@/constants/copy";
 import { ROUTES } from "@/constants/routes";
 
@@ -18,24 +19,18 @@ export default function QuizReviewPage() {
           title={COPY.REVIEW_TITLE}
           description="Edit any answer, then generate your top 3 recommendations."
         />
-        <p className="mt-6 text-zinc-600 dark:text-zinc-400">
+        <p className="mt-6 text-muted">
           Review UI will show grouped answers and links back to each question;
           {COPY.GENERATE_RESULTS} will run scoring and go to {ROUTES.RESULTS}.
         </p>
         <p className="mt-4">
-          <a
-            href={ROUTES.QUIZ}
-            className="text-foreground underline hover:no-underline"
-          >
+          <TextLink href={ROUTES.QUIZ} underline>
             Back to quiz
-          </a>
+          </TextLink>
           {" · "}
-          <a
-            href={ROUTES.RESULTS}
-            className="text-foreground underline hover:no-underline"
-          >
+          <TextLink href={ROUTES.RESULTS} underline>
             Results (placeholder)
-          </a>
+          </TextLink>
         </p>
       </LayoutShell>
     </div>
