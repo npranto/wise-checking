@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "format": "prettier \"app/**/*.{ts,tsx,js,jsx,json,css,md}\" --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -25,8 +26,17 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "husky": "^9.1.7",
+    "lint-staged": "^15.4.0",
     "prettier": "^3.8.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "app/**/*.{ts,tsx,js,jsx}": [
+      "npm run lint"
+    ],
+    "app/**/*.{ts,tsx,js,jsx,json,css,md}": [
+      "npm run format"
+    ]
   }
 }
