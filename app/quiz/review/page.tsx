@@ -7,7 +7,7 @@
 
 import { LayoutShell } from "@/components/LayoutShell";
 import { PageHeader } from "@/components/PageHeader";
-import { TextLink } from "@/components/TextLink";
+import { Button } from "@/components/Button";
 import { COPY } from "@/constants/copy";
 import { ROUTES } from "@/constants/routes";
 
@@ -23,14 +23,32 @@ export default function QuizReviewPage() {
           Review UI will show grouped answers and links back to each question;
           {COPY.GENERATE_RESULTS} will run scoring and go to {ROUTES.RESULTS}.
         </p>
-        <p className="mt-4">
-          <TextLink href={ROUTES.QUIZ} underline>
+        <p className="mt-4 flex flex-wrap items-center gap-3">
+          <Button
+            href={ROUTES.QUIZ}
+            variant="ghost"
+            size="sm"
+            className="underline"
+            analytics={{
+              event: "Review.BackToQuiz",
+              data: { location: "review-page" },
+            }}
+          >
             Back to quiz
-          </TextLink>
-          {" · "}
-          <TextLink href={ROUTES.RESULTS} underline>
+          </Button>
+          <span className="text-muted">{"·"}</span>
+          <Button
+            href={ROUTES.RESULTS}
+            variant="ghost"
+            size="sm"
+            className="underline"
+            analytics={{
+              event: "Review.GoToResults",
+              data: { location: "review-page" },
+            }}
+          >
             Results (placeholder)
-          </TextLink>
+          </Button>
         </p>
       </LayoutShell>
     </div>

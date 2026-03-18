@@ -20,7 +20,16 @@ export default function Home() {
             everyone; built with Muslim-friendly banking in mind.
           </p>
           <p className="mt-2 text-sm text-muted">Takes only a few minutes.</p>
-          <Button href="/quiz" variant="primary" size="md" className="mt-8">
+          <Button
+            href="/quiz"
+            variant="primary"
+            size="md"
+            className="mt-8"
+            analytics={{
+              event: "Home.StartQuiz",
+              data: { location: "hero" },
+            }}
+          >
             Start the quiz
           </Button>
         </div>
@@ -140,7 +149,15 @@ export default function Home() {
         <div
           className={`mx-auto ${UI.MAX_WIDTH} ${UI.CONTAINER_PADDING} ${UI.SECTION_SPACING} text-center`}
         >
-          <Button href="/quiz" variant="primary" size="md">
+          <Button
+            href="/quiz"
+            variant="primary"
+            size="md"
+            analytics={{
+              event: "Home.StartQuiz",
+              data: { location: "footer-cta" },
+            }}
+          >
             Start the quiz
           </Button>
         </div>
