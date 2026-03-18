@@ -32,18 +32,35 @@ Detailed scope, UX, data models, and build order live in **[`prompts/project-out
 ```bash
 # Install dependencies
 npm install
+
+# (optional) initialize Husky hooks if needed
+npm run prepare
 ```
 
 ---
 
 ## Scripts
 
-| Command        | Description                          |
-|----------------|--------------------------------------|
-| `npm run dev`  | Start dev server (App Router + HMR)  |
-| `npm run build`| Production build                     |
-| `npm run start`| Run production server after build    |
-| `npm run lint` | ESLint (Next.js config)              |
+| Command               | Description                         |
+| --------------------- | ----------------------------------- |
+| `npm run dev`         | Start dev server (App Router + HMR) |
+| `npm run build`       | Production build                    |
+| `npm run start`       | Run production server after build   |
+| `npm run lint`        | ESLint (Next.js config)             |
+| `npm run format`      | Prettier format for \`app/\*_/_\`   |
+| `npm run lint-staged` | Run lint-staged on staged files     |
+
+---
+
+## Git hooks & lint-staged
+
+- **Pre-commit:** Husky runs `npx lint-staged` on staged files.
+- **Linting on commit:** Staged `app/**/*.{ts,tsx,js,jsx}` files are passed to `npm run lint`.
+- **Formatting on commit:** Staged `app/**/*.{ts,tsx,js,jsx,json,css,md}` files are formatted with Prettier.
+- **Manual checks:**
+  - `npm run lint` — full-project lint.
+  - `npm run format` — format the entire `app` folder.
+  - `npm run lint-staged` — run the lint-staged pipeline against currently staged files.
 
 **Local dev (default):** [http://localhost:3000](http://localhost:3000)
 
