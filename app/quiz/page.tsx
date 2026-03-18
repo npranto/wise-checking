@@ -7,7 +7,7 @@
 
 import { LayoutShell } from "@/components/LayoutShell";
 import { PageHeader } from "@/components/PageHeader";
-import { TextLink } from "@/components/TextLink";
+import { Button } from "@/components/Button";
 import { COPY } from "@/constants/copy";
 import { ROUTES } from "@/constants/routes";
 
@@ -23,14 +23,32 @@ export default function QuizPage() {
           Quiz UI will go here: one question at a time, next/back/skip, using lib/quiz
           and @/data.
         </p>
-        <p className="mt-4">
-          <TextLink href={ROUTES.QUIZ_REVIEW} underline>
+        <p className="mt-4 flex flex-wrap items-center gap-3">
+          <Button
+            href={ROUTES.QUIZ_REVIEW}
+            variant="ghost"
+            size="sm"
+            className="underline"
+            analytics={{
+              event: "Quiz.GoToReview",
+              data: { location: "quiz-page" },
+            }}
+          >
             Go to review (placeholder)
-          </TextLink>
-          {" · "}
-          <TextLink href={ROUTES.HOME} underline>
+          </Button>
+          <span className="text-muted">{"·"}</span>
+          <Button
+            href={ROUTES.HOME}
+            variant="ghost"
+            size="sm"
+            className="underline"
+            analytics={{
+              event: "Quiz.BackToHome",
+              data: { location: "quiz-page" },
+            }}
+          >
             {COPY.APP_NAME} home
-          </TextLink>
+          </Button>
         </p>
       </LayoutShell>
     </div>

@@ -12,8 +12,8 @@
   - [x] `hooks/`
   - [x] `constants/`
 - [x] Set up linting, formatting, and naming conventions
-- [ ] Add base layout, container widths, spacing scale, color tokens
-- [ ] Create a deploy target on Vercel
+- [x] Add base layout, container widths, spacing scale, color tokens
+- [x] Create a deploy target on Vercel
 
 ---
 
